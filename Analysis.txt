@@ -1,17 +1,15 @@
-Suppose `calls.csv` file has `m` rows and `texts.csv` file has `n` rows.
-For all the tasks we also need to include time complexity to read file: `O(m) + O(n)`. We assue that it is preprocessed.
 - Task 0
 Time Complexity: O(1)
-Since we are just reading the first line.
+It is O(1) because the time to access something is independent of the number of items in the collection, as we are looking for a specific value, the last, and the first in this case.
 - Task 1
-Time Complexity: O(n) + O(m)
-Since we need to iterate in all the records to find unique numbers. Operations in set takes O(1) time.
+Time Complexity: O(n)
+Since we are looking for the worst-case situation, the notation for the containers is one character, for instance, n, since there are two for loops => O( n + n) => O(2n) and this reduced to O(n).
 - Task 2
-Time Complexity: O(m)
-Since we need to iterate in the whole `calls.csv` file to find max duration call.
+Time Complexity: O(n)
+Since we need just to iterate in the whole `calls.csv` file to find max duration call.
 - Task 3
-Time Complexity: O(mlog(m))
-The list sorting takes the maximum time which is mlog(m).
+Time Complexity: O(nlog(n))
+Since we have 3 for loops => O(n)+O(n)+O(n) = O(n) and a sorting function => O(nlog(n)). Since sorting function is more time expensive than for loops therefore the final complexity becomes nlog(n).
 - Task 4
-Time Complexity: (m+n)log(m+n)
-Since we need to find records from both the files which could be telemarketers and sort the list.
+Time Complexity: (n)log(n)
+Since we have 2 for loops => O(n)+O(n) = O(n) and a sorting function => O(nlog(n)). Since sorting function is more time expensive than for loops therefore the final complexity becomes nlog(n).

@@ -19,26 +19,26 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during
 September 2016.".
 """
-months = dict()
-months["01"] = "January"
-months["02"] = "February"
-months["03"] = "March"
-months["04"] = "April"
-months["05"] = "May"
-months["06"] = "June"
-months["07"] = "July"
-months["08"] = "August"
-months["09"] = "September"
-months["10"] = "October"
-months["11"] = "November"
-months["12"] = "December"
 
 if __name__ == '__main__':
     maxTime = -1
-    record = []
-    for rec in calls:
-        if(int(rec[3]) > maxTime):
-            maxTime = int(rec[3])
-            record = rec
+    callDurations = dict()
+    record = ""
+    for cl, rc, ts, t in calls:
+        t = int(t)
+        if(cl in callDurations):
+            callDurations[cl] += t
+        else:
+            callDurations[cl] = t
+        if(rc in callDurations):
+            callDurations[rc] += t
+        else:
+            callDurations[rc] = t
+        if(callDurations[cl] > maxTime):
+            maxTime = callDurations[cl]
+            record = cl
+        if(callDurations[cl] > maxTime):
+            maxTime = callDurations[cl]
+            record = rc
 
-    print("{} spent the longest time, {}, seconds, on the phone during {} {}.".format(record[0],record[3], months[record[2][3:5]], record[2][6:10]))
+    print("{} spent the longest time, {}, seconds, on the phone during September 2016.".format(record,maxTime))

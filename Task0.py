@@ -25,5 +25,5 @@ if __name__ == '__main__':
     firstText = texts[0]
     print("First record of texts, {} texts {} at time {}".format(firstText[0], firstText[1], firstText[2]))
 
-    firstCall = calls[0]
-    print("First record of calls, {} calls {} at time {}".format(firstCall[0], firstCall[1], firstCall[2]))
+    lastCall = calls[-1]
+    print("Last record of calls, {} calls {} at time {}, lasting {} seconds".format(lastCall[0], lastCall[1], lastCall[2],lastCall[3] ))
